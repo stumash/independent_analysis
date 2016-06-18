@@ -30,4 +30,4 @@ fbi <- do.call(rbind, table.list)
 rm(curr.nodes, curr.page, curr.table, curr.state.url, url.template, i, cn, state.names, table.list)
 
 # save the resulting table to a unclean_table.RData
-save(fbi, file = "unclean_table.RData.RData")
+save(fbi, file = "unclean_table.RData")
