@@ -1,0 +1,44 @@
+---
+title: "USA Crime by City"
+author: "Stuart Mashaal"
+date: "June 19, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Crime rates across the United States vary greatly by state, city, demographic and community type. In metropolitan areas, violent crime and property crime rates area higher than elsewhere.  Rural areas experience from lower rates of both property crime and violent crime.  In cities outside of metropolitan areas, violent crime is lower than the national average while property crime rates are higher than it.  The 50 states have populations and demographics that vary greatly, as does the distribution of those populations and demographics in a given state's cities and rural areas.  This in turn can be responsible for the large variation in crime rates across the states.
+
+This analysis concerns the prevalence of crime accross the United States.  Specifically, this analysis is concerned with determining the relationships, if any, between the rates of different crimes per city and per state in the US in the year 2013.
+
+## The Data
+
+The data used for this analysis was taken from the FBI website, at [www.fbi.gov/table-8/2013](https://www.fbi.gov/about-us/cjis/ucr/crime-in-the-u.s/2013/crime-in-the-u.s.-2013/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2013.xls/view).  The FBI data contains all crime known to law enforcement by City, by State, in the year 2013.  The FBI data is provided in tables with the following variables as columns, one table per state:
+
+Varable Name                         | Type       | Description
+-------------------------------------|------------|-----------------------------------------------
+City                                 | character  | name of city
+Population                           | continuous | number of inhabitants
+Violent crime                        | continuous | counts of violent crime
+Murder and nonnegligent manslaughter | continuous | counts of murder and nonnegligent manslaughter
+Rape (revised definition)1           | continuous | counts of rape under the revised definition
+Rape (legacy definition)2            | continuous | counts of rape under the legacy definition
+Robbery                              | continuous | counts of robbery
+Aggravated assault                   | continuous | counts of aggravated assault
+Property crime                       | continuous | counts of property crime
+Burglary                             | continuous | counts of burglary
+Larceny-theft                        | continuous | counts of larceny
+Motor vehicle theft                  | continuous | counts of motor-vehicle theft
+Arson3                               | continuous | counts of arson
+
+## Data Preparation
+
+## Exploratory Analysis
+
+## Modelling and Modelling Evaluation and Results
+
+## Conclusion

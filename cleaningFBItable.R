@@ -22,5 +22,7 @@ fbi$City <- factor(fbi$City)
 fbi$State <- factor(fbi$State)
 ### rearrange columns
 fbi <- fbi[,c(12, 1:4, 13 ,5:11)]
+### remove places with population below 100 since they're uninteresting
+fbi <- fbi[fbi$Population > 100,]
 ### save the file
 save(fbi, file = "clean_table.RData")
