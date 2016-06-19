@@ -11,7 +11,11 @@ View(fbi)
 View(fbi.pc)
 View(states.data)
 View(states.data.pc)
-
+nums <- c()
+for (i in 1:50) {
+  nums <- c(nums, sum(fbi$Violent_crime[fbi.pc$State == levels(fbi.pc$State)[i]]))
+}
+nums
 ### eda
 ## correlations: matrices and vectors
 # correlation matrix, displays 0 if correlation is below 0.85
@@ -76,3 +80,25 @@ crimchor$show_labels = FALSE
 crimchor.final = crimchor$render()
 # plot both crim and population to show high correlation
 grid.arrange(popchor.final, crimchor.final)
+# a data frame for violent crime by state
+violstate <- data.frame(region = rownames(states.data.ch), value = states.data.ch$Violent_crime)
+violchor <- StateChoropleth$new(violstate)
+violchor$title = "2013 State Violent Crime Estimates"
+violchor$legend = "Violent Crime"
+violchor$set_num_colors(7)
+violchor$set_zoom(NULL)
+violchor$show_labels = FALSE
+violchor.final = violchor$render()
+# a data frame for violent crime by state per capita
+states.data.pc.ch <- states.data.pc
+rownames(states.data.pc.ch) <- str_replace_all(rownames(states.data.pc), "[_\\-]", " ")
+violpc <- data.frame(region = rownames(states.data.pc.ch), value = states.data.pc.ch$Violent_crime)
+violpcch <- StateChoropleth$new(violpc)
+violpcch$title = "2013 State Violent Crime Per Capita Estimates"
+violpcch$legend = "Violent Crime Per Capita"
+violpcch$set_num_colors(7)
+violpcch$set_zoom(NULL)
+violpcch$show_labels = FALSE
+violpcch.final = violpcch$render()
+grid.arrange(violchor.final, violpcch.final)
+rm(violpcch, violpc, violchor, popchor, nums, j, i, crimchor, violstate)

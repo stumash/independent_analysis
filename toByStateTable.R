@@ -14,10 +14,13 @@ for (currstate in levels(fbi$State)) {
   states.data[j,] <- currstate.row
   j <- j + 1
 }
+### NEEDS FIXING
 states.data.pc <- states.data
-for(i in nrow(states.data.pc)) {
-  states.data.pc[i,-1] <- states.data.pc[i,-1]/states.data.pc[i,1]
+for(i in 2:ncol(states.data.pc)) {
+  states.data.pc[,i] <- states.data.pc[,i]/states.data.pc[,1]
 }
-states.data.pc
-save(states.data, states.data.pc, file = "state_tables.RData")
+states.data.pc$Violent_crime
+# remove clutter variables
 rm(currstate, currstate.row, i, currstate.data, j)
+# save the created by-state tables
+save(states.data, states.data.pc, file = "state_tables.RData")

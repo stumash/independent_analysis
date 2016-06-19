@@ -26,3 +26,11 @@ fbi <- fbi[,c(12, 1:4, 13 ,5:11)]
 fbi <- fbi[fbi$Population > 100,]
 ### save the file
 save(fbi, file = "clean_table.RData")
+
+### make table of crime per capita
+fbi.pc <- fbi
+for (i in 4:13) {
+  fbi.pc[,i] <- fbi.pc[,i]/fbi.pc[,3]
+}
+### save the table
+save(fbi.pc, file = "table_per_capita.RData")
