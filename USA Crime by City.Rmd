@@ -320,3 +320,4 @@ summary(stateviollmpc)
 ```
 
 The results of these models confirm that while there is a relationship between population and crime per capita, the relationship is weak and population alone is not sufficient to predict crime rate per capita.  The models also show that though the per capita rates of many types of crime can be used to predict the per capita rates of other crime on the city-wide level (model 3 R-squared 0.64) to some extent, they are low-accuracy predictors for the data aggregated by state.
+
