@@ -1,3 +1,4 @@
+##### Modelling
 # linear regression model to predict violent crime per city from all other variables, excluding
 # variables representing specific kinds of violent crime
 cityviollm <- lm(Violent_crime ~ . - Rape - Robbery - Aggravated_assualt - `Murder_and_non-neg_manslaughter` - City - State, fbi)

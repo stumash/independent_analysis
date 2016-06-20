@@ -59,7 +59,7 @@ rownames(states.data.ch) <- str_replace_all(rownames(states.data.ch), "[_\\-]", 
 popstate <- data.frame(region = rownames(states.data.ch), value = states.data.ch$Population)
 # make choropleth
 popchor <- StateChoropleth$new(popstate)
-popchor$title = "2013 State Population Estimates"
+popchor$title = "2013 State Population"
 popchor$legend = "Population"
 popchor$set_num_colors(7)
 popchor$set_zoom(NULL)
@@ -72,7 +72,6 @@ for(i in 1:50) {
 }
 crimstate <- data.frame(region = rownames(states.data.ch), value = values)
 crimchor <- StateChoropleth$new(crimstate)
-crimchor$title = "2013 State Total Crime Estimates"
 crimchor$legend = "Total Crime"
 crimchor$set_num_colors(7)
 crimchor$set_zoom(NULL)
@@ -83,7 +82,6 @@ grid.arrange(popchor.final, crimchor.final)
 # a data frame for violent crime by state
 violstate <- data.frame(region = rownames(states.data.ch), value = states.data.ch$Violent_crime)
 violchor <- StateChoropleth$new(violstate)
-violchor$title = "2013 State Violent Crime Estimates"
 violchor$legend = "Violent Crime"
 violchor$set_num_colors(7)
 violchor$set_zoom(NULL)
@@ -94,7 +92,6 @@ states.data.pc.ch <- states.data.pc
 rownames(states.data.pc.ch) <- str_replace_all(rownames(states.data.pc), "[_\\-]", " ")
 violpc <- data.frame(region = rownames(states.data.pc.ch), value = states.data.pc.ch$Violent_crime)
 violpcch <- StateChoropleth$new(violpc)
-violpcch$title = "2013 State Violent Crime Per Capita Estimates"
 violpcch$legend = "Violent Crime Per Capita"
 violpcch$set_num_colors(7)
 violpcch$set_zoom(NULL)

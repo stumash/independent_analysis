@@ -1,0 +1,10 @@
+base
+lattice
+ggplot2
+caret
+stringr
+plyr
+XML
+acs
+choroplethr
+gridExtra

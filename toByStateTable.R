@@ -14,7 +14,6 @@ for (currstate in levels(fbi$State)) {
   states.data[j,] <- currstate.row
   j <- j + 1
 }
-### NEEDS FIXING
 states.data.pc <- states.data
 for(i in 2:ncol(states.data.pc)) {
   states.data.pc[,i] <- states.data.pc[,i]/states.data.pc[,1]
